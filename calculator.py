@@ -1,26 +1,3 @@
-def add(num1, num2):
-  
-    return num1 + num2
-
-
-def subtract(num1, num2):
-   
-    return num1 - num2
-
-
-def multiply(num1, num2):
-  
-    return num1 * num2
-
-
-def divide(num1, num2):
-
-    if num2 == 0:
-        return "Error: Cannot divide by zero!"
-    return num1 / num2
-
-
-
 def get_valid_number(prompt):
    
     while True:
@@ -32,39 +9,20 @@ def get_valid_number(prompt):
             print(f"Invalid input: '{user_input}' is not a valid number. Please try again.")
 
 
-def basic_calculator():
-   
-    print("\n" + "="*50)
-    print("BASIC CALCULATOR")
-    print("="*50)
-    
-    num1 = get_valid_number("Enter the first number: ")
-    num2 = get_valid_number("Enter the second number: ")
-    
-    # Display results in formatted way
-    print("\n--- Results ---")
-    print(f"{num1} + {num2} = {add(num1, num2)}")
-    print(f"{num1} - {num2} = {subtract(num1, num2)}")
-    print(f"{num1} * {num2} = {multiply(num1, num2)}")
-    
-    division_result = divide(num1, num2)
-    print(f"{num1} / {num2} = {division_result}")
-    print()
-
 
 class Calculator:
    
     
     def add(self, num1, num2):
-        """Add two numbers."""
+      
         return num1 + num2
     
     def subtract(self, num1, num2):
-        """Subtract two numbers."""
+     
         return num1 - num2
     
     def multiply(self, num1, num2):
-        """Multiply two numbers."""
+     
         return num1 * num2
     
     def divide(self, num1, num2):
@@ -74,7 +32,7 @@ class Calculator:
         return num1 / num2
     
     def menu(self):
-        """Display available calculator options."""
+       
         print("\n" + "="*50)
         print("MENU-DRIVEN CALCULATOR")
         print("="*50)
