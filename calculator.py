@@ -1,5 +1,5 @@
 def get_number(prompt):
-    
+
     while True:
         try:
             user_input = input(prompt)
@@ -79,4 +79,3 @@ while True:
     print("  -----------------")
 
 print("\n done")
-
