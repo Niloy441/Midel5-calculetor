@@ -1,5 +1,5 @@
 def get_number(prompt):
-    """ Eita user theke shothik number input neyar jonno banano hoyeche. """
+    
     while True:
         try:
             user_input = input(prompt)
@@ -79,3 +79,4 @@ while True:
     print("  -----------------")
 
 print("\n done")
+
