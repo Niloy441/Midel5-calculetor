@@ -1,103 +1,81 @@
-def get_valid_number(prompt):
-   
+def get_number(prompt):
+    """ Eita user theke shothik number input neyar jonno banano hoyeche. """
     while True:
         try:
             user_input = input(prompt)
             number = float(user_input)
             return number
         except ValueError:
-            print(f"Invalid input: '{user_input}' is not a valid number. Please try again.")
+          
+            print("  Error: Shudhu number input din please.")
 
 
 
-class Calculator:
-   
+print("Starting the loop...")
+
+
+while True:
+    print("\n")
+    print("----- OPTIONS -----")
+    print("1. Addition (+)")
+    print("2. Subtraction (-)")
+    print("3. Multiplication (*)")
+    print("4. Division (/)")
+    print("5. Stop")
+    print("-------------------")
     
-    def add(self, num1, num2):
-      
-        return num1 + num2
+    choice = input("Enter your choice (1-5): ")
     
-    def subtract(self, num1, num2):
-     
-        return num1 - num2
-    
-    def multiply(self, num1, num2):
-     
-        return num1 * num2
-    
-    def divide(self, num1, num2):
-       
-        if num2 == 0:
-            return "Error: Cannot divide by zero!"
-        return num1 / num2
-    
-    def menu(self):
-       
-        print("\n" + "="*50)
-        print("MENU-DRIVEN CALCULATOR")
-        print("="*50)
-        print("1. Add")
-        print("2. Subtract")
-        print("3. Multiply")
-        print("4. Divide")
-        print("5. Exit")
-        print("="*50)
-    
-    def run(self):
-       
-        print("\n" + "="*50)
-        print("WELCOME TO THE CALCULATOR")
-        print("="*50)
+
+    if choice in ["5", "stop", "exit", "quit"]:
+        print("\nThank you for using the calculator. Program is closing.")
+        break
         
-        while True:
-            # Display menu
-            self.menu()
-            
-            # Get user choice
-            choice = input("Enter your choice (1-5): ").strip()
-            
-            # Check for exit
-            if choice == "5":
-                print("\nThank you for using the calculator. Goodbye!")
-                break
-            
-            # Validate choice
-            if choice not in ["1", "2", "3", "4"]:
-                print("Invalid choice. Please enter a number between 1 and 5.")
-                continue
-            
-            # Get two numbers from user
-            try:
-                num1 = get_valid_number("Enter the first number: ")
-                num2 = get_valid_number("Enter the second number: ")
-            except KeyboardInterrupt:
-                print("\nCalculation cancelled.")
-                continue
-            
-            # Perform the selected operation
-            result = None
-            operation_symbol = ""
-            
-            if choice == "1":
-                result = self.add(num1, num2)
-                operation_symbol = "+"
-            elif choice == "2":
-                result = self.subtract(num1, num2)
-                operation_symbol = "-"
-            elif choice == "3":
-                result = self.multiply(num1, num2)
-                operation_symbol = "*"
-            elif choice == "4":
-                result = self.divide(num1, num2)
-                operation_symbol = "/"
-            
-            # Display formatted result
-            print(f"\nResult: {num1} {operation_symbol} {num2} = {result}\n")
+
+    if choice not in ["1", "2", "3", "4"]:
+        print("  Invalid choice. Please enter a number between 1 and 5.")
+        continue
 
 
-if __name__ == "__main__":
-    # Create a Calculator object
-    calculator = Calculator()
+    try:
+        num1 = get_number("  Enter the first number: ")
+        num2 = get_number("  Enter the second number: ")
+        
+    except KeyboardInterrupt:
+        print("\n\nProgram cancelled by user.")
+        break
+
+    result = 0.0
+    op_symbol = ""
+  
+    if choice == "1":
+        result = num1 + num2
+        op_symbol = "+"
+        
+    elif choice == "2":
+        result = num1 - num2
+        op_symbol = "-"
+        
+    elif choice == "3":
+        result = num1 * num2
+        op_symbol = "*"
+        
+    elif choice == "4":
+        op_symbol = "/"
+        if num2 == 0:
+            result = "Error! Cannot divide by zero."
+        else:
+            result = num1 / num2
+            
+
+    print("\n  -----------------")
+    if isinstance(result, str):
+       
+        print(f"  {result}") 
+    else:
+   
+        print(f"  Result: {num1} {op_symbol} {num2} = {result}")
     
-    # Start the calculator by calling the run() method
-    calculator.run()
+    print("  -----------------")
+
+print("\n done")
