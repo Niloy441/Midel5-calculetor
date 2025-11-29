@@ -15,25 +15,23 @@ print("Starting the loop...")
 
 
 while True:
-    print("\n")
-    print("----- OPTIONS -----")
     print("1. Addition (+)")
     print("2. Subtraction (-)")
     print("3. Multiplication (*)")
     print("4. Division (/)")
     print("5. Stop")
-    print("-------------------")
+
     
     choice = input("Enter your choice (1-5): ")
     
 
     if choice in ["5", "stop", "exit", "quit"]:
-        print("\nThank you for using the calculator. Program is closing.")
+        print("\n Program is closing.")
         break
         
 
     if choice not in ["1", "2", "3", "4"]:
-        print("  Invalid choice. Please enter a number between 1 and 5.")
+        print("  Invalid choices. Please enter a number 1 and 5.")
         continue
 
 
@@ -68,7 +66,7 @@ while True:
             result = num1 / num2
             
 
-    print("\n  -----------------")
+  
     if isinstance(result, str):
        
         print(f"  {result}") 
@@ -76,6 +74,7 @@ while True:
    
         print(f"  Result: {num1} {op_symbol} {num2} = {result}")
     
-    print("  -----------------")
+ 
 
 print("\n done")
+
